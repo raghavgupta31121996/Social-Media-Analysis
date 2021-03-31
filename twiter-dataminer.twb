@@ -1,0 +1,973 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20203.20.1018.2303                               -->
+<workbook original-version='18.1' source-build='2020.3.2 (20203.20.1018.2303)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <_.fcp.SetMembershipControl.true...SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='SheetJS+ (Multiple Connections)' inline='true' name='federated.10n75db03glg2q11de43z0za47ou' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='dataminer-twitter' name='excel-direct.0r3kc3j0gbwh0u1fy84eu0a8hekg'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/raghavgupta/Desktop/cardiff met/Social media analytics for business/research/apple/dataminer-twitter.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+          <named-connection caption='dataminer-twitter (2)' name='excel-direct.1v20v6w0agp1i719dlcrf083mpk5'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='/Users/raghavgupta/Desktop/cardiff met/Social media analytics for business/research/samsung/dataminer-twitter.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.0r3kc3j0gbwh0u1fy84eu0a8hekg' name='SheetJS' table='[SheetJS$]' type='table'>
+          <columns gridOrigin='A1:F59:no:A1:F59:0' header='yes' outcome='2'>
+            <column datatype='string' name='Name' ordinal='0' />
+            <column datatype='string' name='Date' ordinal='1' />
+            <column datatype='string' name='Hastags' ordinal='2' />
+            <column datatype='string' name='Tweet' ordinal='3' />
+            <column datatype='string' name='Image 1' ordinal='4' />
+            <column datatype='string' name='Image 2' ordinal='5' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='excel-direct.0r3kc3j0gbwh0u1fy84eu0a8hekg' name='SheetJS' table='[SheetJS$]' type='table'>
+            <columns gridOrigin='A1:F59:no:A1:F59:0' header='yes' outcome='2'>
+              <column datatype='string' name='Name' ordinal='0' />
+              <column datatype='string' name='Date' ordinal='1' />
+              <column datatype='string' name='Hastags' ordinal='2' />
+              <column datatype='string' name='Tweet' ordinal='3' />
+              <column datatype='string' name='Image 1' ordinal='4' />
+              <column datatype='string' name='Image 2' ordinal='5' />
+            </columns>
+          </relation>
+          <relation all='true' connection='excel-direct.1v20v6w0agp1i719dlcrf083mpk5' include-siblings='false' is-recursive='false' name='Union' path='' type='batch-union'>
+            <database-filter>
+              <expression op='='>
+                <expression op='dataminer-twitter.xlsx' />
+              </expression>
+            </database-filter>
+            <table-filter />
+            <columns header='yes'>
+              <column datatype='string' name='Name' />
+              <column datatype='string' name='Date' />
+              <column datatype='string' name='Hastags' />
+              <column datatype='string' name='Tweet' />
+              <column datatype='string' name='Image 1' />
+              <column datatype='string' name='Image 2' />
+              <column datatype='string' name='Path' />
+              <column datatype='string' name='Sheet' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[Date (Union)]' value='[Union].[Date]' />
+          <map key='[Date]' value='[SheetJS].[Date]' />
+          <map key='[Hastags (Union)]' value='[Union].[Hastags]' />
+          <map key='[Hastags]' value='[SheetJS].[Hastags]' />
+          <map key='[Image 1 (Union)]' value='[Union].[Image 1]' />
+          <map key='[Image 1]' value='[SheetJS].[Image 1]' />
+          <map key='[Image 2 (Union)]' value='[Union].[Image 2]' />
+          <map key='[Image 2]' value='[SheetJS].[Image 2]' />
+          <map key='[Name (Union)]' value='[Union].[Name]' />
+          <map key='[Name]' value='[SheetJS].[Name]' />
+          <map key='[Path]' value='[Union].[Path]' />
+          <map key='[Sheet]' value='[Union].[Sheet]' />
+          <map key='[Tweet (Union)]' value='[Union].[Tweet]' />
+          <map key='[Tweet]' value='[SheetJS].[Tweet]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F59:no:A1:F59:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>2</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Union]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F14:no:A1:F14:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Name]</local-name>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SheetJS_76020AFAAD2C4916A465005DFFAEA359]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SheetJS_76020AFAAD2C4916A465005DFFAEA359]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hastags</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Hastags]</local-name>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias>Hastags</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SheetJS_76020AFAAD2C4916A465005DFFAEA359]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tweet</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Tweet]</local-name>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias>Tweet</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SheetJS_76020AFAAD2C4916A465005DFFAEA359]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Image 1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Image 1]</local-name>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias>Image 1</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SheetJS_76020AFAAD2C4916A465005DFFAEA359]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Image 2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Image 2]</local-name>
+            <parent-name>[SheetJS]</parent-name>
+            <remote-alias>Image 2</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[SheetJS_76020AFAAD2C4916A465005DFFAEA359]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Name (Union)]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Name</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Date (Union)]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Hastags</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Hastags (Union)]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Hastags</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Tweet</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Tweet (Union)]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Tweet</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Image 1</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Image 1 (Union)]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Image 1</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Image 2</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Image 2 (Union)]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Image 2</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Path</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Path]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Path</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Sheet</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Sheet]</local-name>
+            <parent-name>[Union]</parent-name>
+            <remote-alias>Sheet</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[_0E33FD1B3B3E42BDB7EF75B6280B7769]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='Apple-twitter-dataminer' datatype='table' name='[__tableau_internal_object_id__].[SheetJS_76020AFAAD2C4916A465005DFFAEA359]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='Samsung-twitter-dataminer' datatype='table' name='[__tableau_internal_object_id__].[_0E33FD1B3B3E42BDB7EF75B6280B7769]' role='measure' type='quantitative' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Apple-twitter-dataminer' id='SheetJS_76020AFAAD2C4916A465005DFFAEA359'>
+            <properties context=''>
+              <relation connection='excel-direct.0r3kc3j0gbwh0u1fy84eu0a8hekg' name='SheetJS' table='[SheetJS$]' type='table'>
+                <columns gridOrigin='A1:F59:no:A1:F59:0' header='yes' outcome='2'>
+                  <column datatype='string' name='Name' ordinal='0' />
+                  <column datatype='string' name='Date' ordinal='1' />
+                  <column datatype='string' name='Hastags' ordinal='2' />
+                  <column datatype='string' name='Tweet' ordinal='3' />
+                  <column datatype='string' name='Image 1' ordinal='4' />
+                  <column datatype='string' name='Image 2' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='Samsung-twitter-dataminer' id='_0E33FD1B3B3E42BDB7EF75B6280B7769'>
+            <properties context=''>
+              <relation all='true' connection='excel-direct.1v20v6w0agp1i719dlcrf083mpk5' include-siblings='false' is-recursive='false' name='Union' path='' type='batch-union'>
+                <database-filter>
+                  <expression op='='>
+                    <expression op='dataminer-twitter.xlsx' />
+                  </expression>
+                </database-filter>
+                <table-filter />
+                <columns header='yes'>
+                  <column datatype='string' name='Name' />
+                  <column datatype='string' name='Date' />
+                  <column datatype='string' name='Hastags' />
+                  <column datatype='string' name='Tweet' />
+                  <column datatype='string' name='Image 1' />
+                  <column datatype='string' name='Image 2' />
+                  <column datatype='string' name='Path' />
+                  <column datatype='string' name='Sheet' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[Hastags]' />
+                <expression op='[Hastags (Union)]' />
+              </expression>
+              <expression op='='>
+                <expression op='[Tweet]' />
+                <expression op='[Tweet (Union)]' />
+              </expression>
+            </expression>
+            <first-end-point object-id='SheetJS_76020AFAAD2C4916A465005DFFAEA359' />
+            <second-end-point object-id='_0E33FD1B3B3E42BDB7EF75B6280B7769' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Tweets and Hashtags of Samsung on twitter'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SheetJS+ (Multiple Connections)' name='federated.10n75db03glg2q11de43z0za47ou' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10n75db03glg2q11de43z0za47ou'>
+            <column datatype='string' name='[Hastags (Union)]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Tweet (Union)]' role='dimension' type='nominal' />
+            <column-instance column='[Tweet (Union)]' derivation='Count' name='[cnt:Tweet (Union):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Hastags (Union)]' derivation='None' name='[none:Hastags (Union):nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]' scope='rows' value='No. of Samsung tweets' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]' />
+              <color column='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]' />
+              <text column='[federated.10n75db03glg2q11de43z0za47ou].[none:Hastags (Union):nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{8F5DC278-A66D-44B7-AC43-A1B460C10CEB}' />
+    </worksheet>
+    <worksheet name='Tweets and hastags of Apple on twitter'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='SheetJS+ (Multiple Connections)' name='federated.10n75db03glg2q11de43z0za47ou' />
+          </datasources>
+          <datasource-dependencies datasource='federated.10n75db03glg2q11de43z0za47ou'>
+            <column datatype='string' name='[Hastags]' role='dimension' type='nominal' />
+            <column datatype='string' name='[Tweet]' role='dimension' type='nominal' />
+            <column-instance column='[Hastags]' derivation='Attribute' name='[attr:Hastags:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Tweet]' derivation='Count' name='[cnt:Tweet:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Hastags]' derivation='None' name='[none:Hastags:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.10n75db03glg2q11de43z0za47ou].[none:Hastags:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Hastags:nk]' />
+              <groupfilter function='member' level='[none:Hastags:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.10n75db03glg2q11de43z0za47ou].[none:Hastags:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-pattern-only' value='dotted' />
+            <format attr='stroke-color' value='#4e79a7' />
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet:qk]' />
+              <color column='[federated.10n75db03glg2q11de43z0za47ou].[attr:Hastags:nk]' />
+              <text column='[federated.10n75db03glg2q11de43z0za47ou].[none:Hastags:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{BF723DD4-E61C-4856-B2F1-EC7712CAB332}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='4' w='100000' x='0' y='0'>
+          <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='9' param='horz' w='98400' x='800' y='1000'>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='98000' id='7' w='82400' x='800' y='1000'>
+              <zone h='49000' id='6' name='Tweets and hastags of Apple on twitter' w='82400' x='800' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49000' id='11' name='Tweets and Hashtags of Samsung on twitter' w='82400' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' fixed-size='160' h='98000' id='8' is-fixed='true' param='vert' w='16000' x='83200' y='1000'>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='70750' id='10' name='Tweets and hastags of Apple on twitter' pane-specification-id='0' param='[federated.10n75db03glg2q11de43z0za47ou].[attr:Hastags:nk]' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='12' name='Tweets and Hashtags of Samsung on twitter' pane-specification-id='0' param='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]' w='16000' x='83200' y='71750'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone _.fcp.SetMembershipControl.false...type='layout-basic' _.fcp.SetMembershipControl.true...type-v2='layout-basic' h='100000' id='14' w='100000' x='0' y='0'>
+              <zone _.fcp.SetMembershipControl.false...type='layout-flow' _.fcp.SetMembershipControl.true...type-v2='layout-flow' h='98000' id='13' param='vert' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='49000' id='6' is-fixed='true' name='Tweets and hastags of Apple on twitter' w='82400' x='800' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='70750' id='10' name='Tweets and hastags of Apple on twitter' pane-specification-id='0' param='[federated.10n75db03glg2q11de43z0za47ou].[attr:Hastags:nk]' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='11' is-fixed='true' name='Tweets and Hashtags of Samsung on twitter' w='82400' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone _.fcp.SetMembershipControl.false...type='color' _.fcp.SetMembershipControl.true...type-v2='color' h='8125' id='12' name='Tweets and Hashtags of Samsung on twitter' pane-specification-id='0' param='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]' w='16000' x='83200' y='71750'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{94E6C160-9528-4A56-9978-36A857BBC22B}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Tweets and hastags of Apple on twitter'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.10n75db03glg2q11de43z0za47ou].[attr:Hastags:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[attr:Hastags:nk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Date (Union):nk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Date:nk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Hastags (Union):nk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Hastags:nk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Tweet (Union):nk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Tweet:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{52C5DE43-B27C-4EF8-BE71-4B49F3CE0F3C}' />
+    </window>
+    <window class='worksheet' name='Tweets and Hashtags of Samsung on twitter'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[cnt:Tweet (Union):qk]</field>
+            <field>[federated.10n75db03glg2q11de43z0za47ou].[none:Tweet (Union):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{206661CA-0368-47F9-95B7-018A0142F5F3}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Tweets and Hashtags of Samsung on twitter' />
+        <viewpoint name='Tweets and hastags of Apple on twitter'>
+          <highlight>
+            <color-one-way>
+              <field>[federated.10n75db03glg2q11de43z0za47ou].[attr:Hastags:nk]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+      </viewpoints>
+      <active id='6' />
+      <simple-id uuid='{C9A48B8B-CDC0-4B94-811E-E39484F2AE6E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      +y6RaBMuj4e7o6P884/+3V53fVfJJ0CNMg2DYr6ANxjANE3aXnkFTdNITk6iaRq5TIbF+Cx3
+      R0exLIv56Wl8odBed3vXySdAjXK63bz3k3+/adn+rk5UTcM0zcqZ6t6338LOs/VKAGxEuz+s
+      5OGhFYrNh1nILpCwNQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCwNQmAsDUJ
+      gLA1CYCwNQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCw
+      NQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCwNQmAsDUJgLA1CYCwNblFUg1qekY3s3aqtff/UgJQ
+      gxZy2WdSb9k0n0m9e6n2Ii3EE5AACFuTAAhbkwAIW5MACFuTAAhbkwAIW5MACFuTAAhbkwAI
+      W5MACFuTAAhbkwAIW5MACFuTAAhbkwAIW5MACFuTAAhbkwAIW5MACFuTAAhbkwAIW5MACFuT
+      AAhbkwAIW5MACFuTAAhbkwAIW5MACFuTAAhbkwAIW5MACFuTAAhbkwAIW5MACFuTAAhb+/8u
+      zXFlCyCTTAAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Tweets and Hashtags of Samsung on twitter' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAACS0lEQVR4nO3WoRECURAFwYMiAhwOTQiEQGTEQRqkgKeQnCOKw4O/L6ZbrnpmqnazLMsy
+      QdR29AAYSQCkCYC03e/h9f5Mj+c8Ygus7i+Ax3Oerrf7iC2wOi8QaQIgTQCkCYA0AZAmANIE
+      QJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoA
+      SBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0
+      AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMA
+      aQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAm
+      ANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIg
+      TQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIE
+      QJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAaQIgTQCk
+      CYA0AZAmANIEQJoASBMAaQIgTQCkCYA0AZAmANIEQJoASBMAabvfw/Gwny7n04gtsLov+dIQ
+      DakIyTMAAAAASUVORK5CYII=
+    </thumbnail>
+    <thumbnail height='192' name='Tweets and hastags of Apple on twitter' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
